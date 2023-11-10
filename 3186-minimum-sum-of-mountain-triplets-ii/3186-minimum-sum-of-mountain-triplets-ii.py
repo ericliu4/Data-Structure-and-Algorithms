@@ -8,8 +8,9 @@ class Solution:
                 leftPrefix.append(val)
             else:
                 leftPrefix.append(leftPrefix[-1])
-            if i == 0 or nums[-1-i] < rightPrefix[-1]:
-                rightPrefix.append(nums[-1-i])
+        for index in range(n-1, -1, -1):
+            if index == n-1 or nums[index] < rightPrefix[-1]:
+                rightPrefix.append(nums[index])
             else:
                 rightPrefix.append(rightPrefix[-1])
         for i in range(1, n-1):
